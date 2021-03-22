@@ -8,7 +8,7 @@
 			<div >
 				<div class="sidebar-background" >
 					<h2 class="logo-text">
-						Online Examination System
+						Quiz Test
 					</h2>
 
 					<div class="left-menu">
