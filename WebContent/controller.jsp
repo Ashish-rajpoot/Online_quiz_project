@@ -27,7 +27,7 @@ if(pDAO.loginValidate(request.getParameter("username").toString(), request.getPa
         String city =request.getParameter("city");
         String address =request.getParameter("address");
     
-         
+         out.print(type);
     pDAO.addNewStudent(fName,lName,uName,email,pass,type,contactNo,city,address);
     response.sendRedirect("adm-page.jsp?pgprt=1");
 }else if(request.getParameter("page").toString().equals("profile")){
