@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<jsp:include page="./includes/header2.jsp" />
 	<center>
 		<div class="central-div">
 			<form method='post' action="controller.jsp">

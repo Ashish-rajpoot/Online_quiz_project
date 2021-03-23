@@ -117,7 +117,7 @@ if(pDAO.loginValidate(request.getParameter("username").toString(), request.getPa
     session.setAttribute("userStatus","0");
     session.removeAttribute("examId");
     session.removeAttribute("examStarted");
-    response.sendRedirect("index.jsp");
+    response.sendRedirect("home.jsp");
 }
 
 %>

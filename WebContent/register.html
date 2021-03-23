@@ -5,6 +5,21 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+	<nav class="navbar navbar-expand-sm bg-faded navbar-light  shadow-sm">
+		<a class="navbar-brand" href="#">LMS</a>
+		<button class="navbar-toggler d-lg-none" type="button"
+			data-toggle="collapse" data-target="#collapsibleNavId"
+			aria-controls="collapsibleNavId" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavId">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<a href="index.jsp"><button type="button" class="btn btn-light ">Home</button></a>
+			</ul>
+		</div>
+	</nav>
+	
 	<center>
 		<div class="central-div" style="top: 10%">
 			<form action="controller.jsp" autocomplete="off">
@@ -46,14 +61,10 @@
 					</tr>
 					<tr>
 						<td><label>Role</label></td>
-						<td>
-						 <select   name="type">
-                            <option value="admin">ADMIN</option>
-                            <option value="student">Student</option>
-                        </select>
-                        </td>
+						<td><input type="text" name="type" class="text"
+							placeholder="student" disabled="disabled"></td>
 					</tr>
-					
+
 					<tr>
 						<td><label>Contact No</label></td>
 						<td><input type="text" name="contactno" class="text"
@@ -70,9 +81,7 @@
 							placeholder="Address"></td>
 					</tr>
 					<tr>
-						<td>
-						<a href="login.jsp">Login here...</a>
-						</td>
+						<td><a href="login.jsp">Login here...</a></td>
 						<td>
 							<center>
 								<input type="submit" value="Register Now" class="button">
