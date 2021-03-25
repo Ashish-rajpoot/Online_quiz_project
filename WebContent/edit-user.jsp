@@ -1,4 +1,5 @@
 <div class="central-div" style="top: 10%">
+	<jsp:include page="./includes/header2.jsp" />
 	<form action="controller.jsp">
 		<input type="hidden" name="page" value="profile">
 		<table>

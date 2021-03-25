@@ -75,6 +75,7 @@ if(pDAO.loginValidate(request.getParameter("username").toString(), request.getPa
         pDAO.delQuestion(Integer.parseInt(request.getParameter("qid")));
         response.sendRedirect("adm-page.jsp?pgprt=3");
         
+        
     }
 
 }else if(request.getParameter("page").toString().equals("exams")){
@@ -117,6 +118,11 @@ if(pDAO.loginValidate(request.getParameter("username").toString(), request.getPa
     session.setAttribute("userStatus","0");
     session.removeAttribute("examId");
     session.removeAttribute("examStarted");
+    
+    
+    session.setAttribute("userStatus", "");
+    session.removeAttribute("userStatus");
+    session.invalidate();
     response.sendRedirect("home.jsp");
 }
 

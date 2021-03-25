@@ -107,6 +107,9 @@
               <div>
                     <img data-u="image" src="./IMG/learn.jpg" />
                 </div>
+                <div>
+                    <img data-u="image" src="./IMG/learn06.jpg" />
+                </div>
                <div>
                     <img data-u="image" src="./IMG/learn01.jpg" />
                 </div>

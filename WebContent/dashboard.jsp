@@ -2,7 +2,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
  <jsp:useBean id="pDAO" class="myPackage.DatabaseClass" scope="page"/>
-
+	<jsp:include page="./includes/header2.jsp" />
         <% 
            if(session.getAttribute("userStatus")!=null){
             String loginConfirm=session.getAttribute("userStatus").toString();

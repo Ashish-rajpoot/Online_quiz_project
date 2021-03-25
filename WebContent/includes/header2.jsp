@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@page import="myPackage.classes.User"%>
+<%@page import="java.util.ArrayList"%>
+<jsp:useBean id="pDAO" class="myPackage.DatabaseClass" scope="page" />
+
+
 <!-- Toast Begins -->
 <!doctype html>
 <html lang="en">
@@ -39,9 +44,38 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavId">
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 				<a href="home.jsp"><button type="button" class="btn btn-light ">Home</button></a>
-				<a name="login" class="btn btn-outline-success mx-2"
+
+				<%if (request.getSession().getAttribute("userStatus") != null){%>
+
+				<%
+           User user=pDAO.getUserDetails(session.getAttribute("userId").toString());
+           if(user.getType().endsWith("admin")){
+      	  %>
+				<a href="adm-page.jsp?pgprt=2"><button type="button"
+						class="btn btn-light ">Course</button></a>
+				<a href="adm-page.jsp?pgprt=3"><button type="button"
+						class="btn btn-light ">Question</button></a>
+				<a href="adm-page.jsp?pgprt=1"><button type="button"
+						class="btn btn-light ">Accounts</button></a>
+				<a href="adm-page.jsp?pgprt=0"><button type="button"
+						class="btn btn-light ">Profile</button></a>
+				<a href="controller.jsp?page=logout"><button type="button"
+						class="btn btn-light ">Logout</button></a>
+
+				<%}else{%>
+				<a href="std-page.jsp?pgprt=1"><button type="button"
+						class="btn btn-light ">Exams</button></a>
+				<a href="std-page.jsp?pgprt=2"><button type="button"
+						class="btn btn-light ">Reasults</button></a>
+				<a href="std-page.jsp?pgprt=0"><button type="button"
+						class="btn btn-light ">Profile</button></a>
+				<a href="controller.jsp?page=logout"><button type="button"
+						class="btn btn-light ">Logout</button></a>
+
+				<%}%>
+				<%}else{%><a name="login" class="btn btn-outline-success mx-2"
 					href="index.jsp" role="button"> Login Menu</a>
-				</form>
+				<%};%>
 			</ul>
 		</div>
 	</nav>
