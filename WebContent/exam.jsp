@@ -109,23 +109,33 @@
 if (request.getParameter("showresult").equals("1")) {
 Exams result = pDAO.getResultByExamId(Integer.parseInt(request.getParameter("eid")));
 %>
-<div class="panel" style="float: left; max-width: 900px">
-	<div class="title">Result of Recent Exam</div>
-	<div class="profile">
-		<span class="tag">Exam Date</span><span class="val"><%=result.getDate()%></span><br />
-		<span class="tag">Start Time</span><span class="val"><%=result.getStartTime()%></span><br />
-		<span class="tag">End Time</span><span class="val"><%=result.getEndTime()%></span><br />
-		<span class="tag">Course Name</span><span class="val"><%=result.getcName()%></span><br />
-		<span class="tag">Obt Marks</span><span class="val"><%=result.getObtMarks()%></span><br />
-		<span class="tag">Total Marks</span><span class="val"><%=result.gettMarks()%></span><br />
-		<span class="tag">Result</span><span class="val"><%=result.getStatus()%></span>
-		</h2>
-	</div>
-	<p></p>
-	<p></p>
-	<p></p>
-	<p></p>
-	<p></p>
+<div class="container jumbotron">
+	<center>
+		<h2>Result of Recent Exam</h2>
+	</center>
+	<table id="rounded-corner" class="table table-striped text-center">
+		<thead>
+			<tr>
+				<th>Exam Date</th>
+				<th>Start Time</th>
+				<th>End Time</th>
+				<th>Course Name</th>
+				<th>Obt Marks</th>
+				<th>Total Marks</th>
+				<th>Result</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><%=result.getDate()%></td>
+				<td><%=result.getStartTime()%></td>
+				<td><%=result.getEndTime()%></td>
+				<td><%=result.getcName()%></td>
+				<td><%=result.getObtMarks()%></td>
+				<td><%=result.gettMarks()%></td>
+				<td><strong><%=result.getStatus()%></strong></td>
+		</tbody>
+	</table>
 </div>
 <%
 	}
@@ -133,36 +143,36 @@ Exams result = pDAO.getResultByExamId(Integer.parseInt(request.getParameter("eid
 %>
 
 <center>
-<div class="container jumbotron">
-	<div class="col-lg-12">
-		<h3>Select Course to Take Exam...</h3>
-		<br />
-		<div class="col-lg-8">
-			<form action="controller.jsp" class="form-group">
-				<label><h5>Select Course</h5></label> <input type="hidden"
-					name="page" value="exams"> <input type="hidden"
-					name="operation" value="startexam"> <select
-					name="coursename" class="form-control">
-					<%
-						ArrayList list1 = pDAO.getAllCourses();
+	<div class="container jumbotron">
+		<div class="col-lg-12">
+			<h3>Select Course to Take Exam...</h3>
+			<br />
+			<div class="col-lg-8">
+				<form action="controller.jsp" class="form-group">
+					<label><h5>Select Course</h5></label> <input type="hidden"
+						name="page" value="exams"> <input type="hidden"
+						name="operation" value="startexam"> <select
+						name="coursename" class="form-control">
+						<%
+							ArrayList list1 = pDAO.getAllCourses();
 
-					for (int i = 0; i < list1.size(); i = i + 2) {
-					%>
-					<option value="<%=list1.get(i)%>"><%=list1.get(i)%></option>
-					<%
-						}
-					%>
-				</select>
-		</div>
-		<div class="col-lg-8">
-			<button type="submit" class="btn-primary form-control">Take
-				Exam</button>
-		</div>
-		</form>
+						for (int i = 0; i < list1.size(); i = i + 2) {
+						%>
+						<option value="<%=list1.get(i)%>"><%=list1.get(i)%></option>
+						<%
+							}
+						%>
+					</select>
+			</div>
+			<div class="col-lg-8">
+				<button type="submit" class="btn-primary form-control">Take
+					Exam</button>
+			</div>
+			</form>
 
+		</div>
+		<%
+			}
+		%>
 	</div>
-	<%
-		}
-	%>
-</div>
 </center>
